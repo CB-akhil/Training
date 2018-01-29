@@ -9,6 +9,24 @@ class Student{
 	int getId(){
 
 	}
+	void setName(){
+
+	}
+	int getName(){
+
+	}
+	void setGender(){
+
+	}
+	boolean getGender(){
+
+	}
+	void setSubjects(){
+
+	}
+	Subject getSubject(){
+
+	}
 }
 class subjects{
 	int 
