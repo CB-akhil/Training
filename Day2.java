@@ -74,8 +74,8 @@ class Day2{
 		int p=scanner.nextInt();
 		System.out.println("intrest rate:");
 		int r=scanner.nextInt();
-		System.out.println("simple intrest: "+ p*n*r/100); //type casting has been left
-		System.out.println("compund intrest: " + p*Math.pow((1+ r/100),n));
+		System.out.println("simple intrest: "+ p*n*(float)r/100); 
+		System.out.println("compund intrest: " + p*Math.pow((1+ (float)r/100),n));
 
 		//febonnaci series upto n
 		System.out.println("Enter n value");
