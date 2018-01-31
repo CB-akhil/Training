@@ -15,8 +15,10 @@ class Day1{
       //smallest power of x greater than y
       int ans=0;
       while(y/x != 0){
+            System.out.println("y:" +y +"x:" + x );
       	y/=x;
       	ans++;
+            System.out.println("y:" +y +"x:" + x );
       }
       System.out.println(ans + 1 );
 
