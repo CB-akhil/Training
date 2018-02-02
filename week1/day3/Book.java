@@ -76,7 +76,7 @@ public class Book{
 		name=scanner.next();
 		System.out.println("Enter Book Price:");
 		price =scanner.nextDouble();
-		System.out.println("Enter Number of Books available:");
+		System.out.println("  Enter Number of Books available: ");
 		qty=scanner.nextInt();
 		b = new Book(name,rk,price,qty);
 		books.add(b);
