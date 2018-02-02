@@ -67,6 +67,7 @@ public class Book{
 		int qty=scanner.nextInt();
 		Author rk = new Author("R.K. Narayan", "rknarayan@gmail.com", 'M');
 		Book b=new Book(name,rk,price,qty);
+		//System.out.println(b.name);
 		Author ak= new Author("Akhil Surapuram", "akhil@chargebee.com", 'M');
 		b.addAuthor(ak);
 		b.printAuthors();
