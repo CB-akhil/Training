@@ -37,13 +37,13 @@ public class Book{
 	}
 	public String toDisplay(){
 		String output="";
-		output.concat(String.format("%s by", name));
+		output=output.concat(String.format("%s by", name));
 		for(Author author : authors){
-			output.concat(",");
-			output.concat(String.format("%s",author.toDisplay()));
+			output=output.concat(",");
+			output=output.concat(String.format("%s",author.toDisplay()));
 		}
-		output.concat(String.format("price : %f",price));
-		output.concat(String.format("Number of Books available : %d",qtyInStock));
+		output=output.concat(String.format("price : %f",price));
+		output=output.concat(String.format("Number of Books available : %d",qtyInStock));
 		return output;
 	}
 
@@ -89,6 +89,7 @@ public class Book{
 				c.printAuthors();
 			}
 		}
+		
 		System.out.println("Displaying all avail Books:");
 		for(Book c : books){
 			if(c.getQtyInStock() != 0)
