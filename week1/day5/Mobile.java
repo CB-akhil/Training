@@ -2,7 +2,7 @@ class Mobile{
 	String name;
 	int remainCharge=0;
 	public void remainCharge(){
-		remainCharge=50;
+		this.remainCharge=50;
 	}
 	public void printCharge(){
 		System.out.println("remaing Charge: " + remainCharge);

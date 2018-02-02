@@ -9,7 +9,7 @@ class Day1{
       if(x+y == 7){
       	System.out.println("sum is 7");
       }else{
-      	System.out.println("sum is " + x+y);
+      	System.out.println("sum is " + (x+y));
       }
       //smallest power of x greater than y
       int ans=0;

@@ -120,5 +120,6 @@ public class StudentDemo{
 		num=scanner.nextInt();
 		subject.setm3(num);
 		student.setSubjects(subject);
+		RestultGenerator.generateResult(student);
 	}
 }
