@@ -89,9 +89,10 @@ class Day2{
 		//largest and smalest in array
 		int array1[]={1,4,2,5,3,8,9};
 		int min=array1[0],max=array1[0];
-		for(int i=1;i<array.length;i++){
+		for(int i=1;i<array1.length;i++){
 			max=((max>array1[i])?max:array1[i]);
 			min=(min<array1[i])?min:array1[i];
+			//System.out.println("min "+ min +" max "+ max);
 		}
 		System.out.println("mininum : "+min);
 		System.out.println("maximum: "+max);
