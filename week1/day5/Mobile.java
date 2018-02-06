@@ -1,3 +1,4 @@
+import java.util.*;
 class Mobile{
 	String name;
 	int remainCharge=0;
@@ -8,6 +9,7 @@ class Mobile{
 		System.out.println("remaing Charge: " + remainCharge);
 	}
 	public static void main(String[] args) {
+		List<Mobile> list = new ArrayList<>();
 		Mobile lava = new Mobile(){
 			//overriding using anonymous Inner class
 			public void remainCharge(){
@@ -15,6 +17,7 @@ class Mobile{
 			}
 		};
 		lava.remainCharge();
+		list.add(lava);
 		lava.printCharge();
 		Mobile onePlus = new Mobile(){
 			public void remainCharge(){
@@ -22,6 +25,9 @@ class Mobile{
 			}
 		};
 		onePlus.remainCharge();
+		list.add(onePlus);
 		onePlus.printCharge();
+		for(Mobile m:list)
+			m.printCharge();
 	}
 }
