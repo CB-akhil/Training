@@ -1,11 +1,11 @@
 import java.util.*;
 class Person{
 	String name,address;
-	Set<Number> numbers = new HashSet<>();
 	Person(String name,String add){
 		this.name=name;
 		address=add;
 	}
+
 	@Override
 	public boolean equals(Object p1){
 		Person person = (Person) p1;
@@ -13,7 +13,7 @@ class Person{
 	}
 	public int hashCode(){
 		return (name+address).hashCode();
-	}
+	}	
 }
 class Number{
 	String number,tag;
@@ -37,12 +37,13 @@ public class PhoneDic{
 			Set<Number> l = Directory.get(Person);
 			l.add(n);
 		}else{
-			person.numbers.add(n);
+			
+			person.numbers.add(n,);
 			Directory.add(person);
 		}
 		
 	}
-	static Set<Person> Directory = new HashSet<>();
+	static Map<String,Set<Number>> Directory = new HashMap<>();
 	public static void main(String[] args) {
 		String[][] sampleData = {
 			{"Akhil","perungudi","mobile","9633469511","mobile","1234567890","mobile","2615371937"},
