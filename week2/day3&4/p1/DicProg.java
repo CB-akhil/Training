@@ -34,6 +34,7 @@ class DicProg{
 		catch (Exception e) {
 			e.printStackTrace();
 		}
+		
 	}
 
 	static void printTable(){
