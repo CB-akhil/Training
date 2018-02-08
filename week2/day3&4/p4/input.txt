@@ -1,0 +1,2 @@
+this is a sample text file. Created for testing Java program.
+Write a program which reads a text file. List all the words in alphabetical order with number of occurrence for each word and write the list into another text file in the format [word]:[number of times it occurred.
