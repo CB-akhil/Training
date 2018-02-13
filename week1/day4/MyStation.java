@@ -32,6 +32,7 @@ abstract class Person{
 }
 class Customer extends Person{
     List<Invoice> invoices= new ArrayList<>();
+    
     Customer(String name,String contact,int age){
         super(name,contact,age);
     }
@@ -94,6 +95,7 @@ public class MyStation{
         Invoice in = new Invoice(akhil,v,emp);
         akhil.addInvoice(in);
         s.addCustomer(akhil);
+        Customer c = new Customer(emp.name,emp.contact,emp.age); 
         System.out.println("lsiting all the Employess");
         for(Employee e:s.employees){
             System.out.println(e.name);
