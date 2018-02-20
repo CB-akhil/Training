@@ -8,7 +8,7 @@ select name from students inner join marks on students.id=student_id where annua
 
 /*	Find the total marks scored by each students in the annual exams. If the student hasn’t appeared for any annual exam, he should still be listed with total marks scored as “0”.
 Format: name, marks, year	*/
-select name,sum(annual) as total,year from students inner join marks on students.id=student_id group by student_id,year;
+select name,sum(annual) as total,year from students left join marks on students.id=student_id group by student_id,year;
 
 /*	List the students with the total marks scored in quarterly from all the subjects they had appeared during the year 2003.
 Format: name, total, grade	*/
@@ -24,7 +24,7 @@ select name,grade,count(medal_won) as no_of_medals from students left join medal
 
 /*	List the students who has not yet received any medals but scored more than 90 marks in all the subjects in the annual exam for that year.
 Format: name, year	*/
-select name,medals.year from students inner join marks on students.id=student_id left join medals on students.id=medals.student_id and marks.year=medals.year where annual > 90 group by students.id,marks.year having count(medal_won)<1;
+select name,marks.year from students inner join marks on students.id=student_id left join medals on students.id=medals.student_id and marks.year=medals.year where annual > 90 group by students.id,marks.year,marks.subject_id having count(medal_won)<1;
 
 /*	List the records from the medals table for the students who had won more than 3 medals.
 Format: name, game_id, medal_won, year, grade	*/
@@ -52,9 +52,9 @@ on (a.student_id=b.student_id and a.grade=b.grade)
 ) as c 
 on c.student_id=students.id;
 
-/*	Lets assign some rating for the total marks scored - S(450-500), A(400-449), B(350-399), C(300-349), D(250,299), E(200-249), F(below 200). List the students with the grade obtained in each year for each exam(quarterly, half-yearly and annual)
+/*	Lets assign some rating for the total marks scored - S(450-500), A(400-449), B(350-399), C(300-349), D(250,299), E(200-249), F(below 200). 
+List the students with the grade obtained in each year for each exam(quarterly, half-yearly and annual)
 Format: name, quarterly_rating, half_yearly_rating, annual_rating, year, grade	*/
-select name,
 If((sum(quarterly)<=500 and sum(quarterly)>=450) ,'S',If(
 (sum(quarterly)<=449 and sum(quarterly)>=400),'A',IF(
 (sum(quarterly)<=399 and sum(quarterly)>=350),'B',IF(
@@ -63,12 +63,14 @@ If((sum(quarterly)<=500 and sum(quarterly)>=450) ,'S',If(
 (sum(quarterly)<=249 and sum(quarterly)>=200),'E',IF(
 sum(quarterly)<200,'F','f'))))))) as quarterly_rating,
 If((sum(half_yearly)<=500 and sum(half_yearly)>=450) ,'S',If(
+
 (sum(half_yearly)<=449 and sum(half_yearly)>=400),'A',IF(
 (sum(half_yearly)<=399 and sum(half_yearly)>=350),'B',IF(
 (sum(half_yearly)<=349 and sum(half_yearly)>=300),'C',IF(
 (sum(half_yearly)<=299 and sum(half_yearly)>=250),'D',IF(
 (sum(half_yearly)<=249 and sum(half_yearly)>=200),'E',IF(
 sum(half_yearly)<200,'F','f'))))))) as half_yearly_rating,
+select name,
 If((sum(annual)<=500 and sum(annual)>=450) ,'S',If(
 (sum(annual)<=449 and sum(annual)>=400),'A',IF(
 (sum(annual)<=399 and sum(annual)>=350),'B',IF(
