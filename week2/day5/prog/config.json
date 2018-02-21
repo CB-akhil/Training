@@ -1,0 +1,37 @@
+{
+    "ChangeHeader":
+     [
+         {
+             "Old":"Invoice Number",
+             "New":"Invoice ID"
+         }
+     ],
+
+    "GroupHeaders":
+    {
+        "Old":
+            [
+                "Customer First Name",
+                "Customer Last Name",
+                "Customer Email",
+                "Customer Company"
+            ],
+        
+            "New":
+            [
+                "First Name",
+                "Last Name",
+                "Email",
+                "Position"
+            ],
+        
+        "HeaderName":"Customer Details"
+    },
+    "TimeFormat":"dd-MM-yyyy HH:mm:ss",
+    "DateField":
+    [
+        "Invoice Date",
+        "Start Date",
+        "Paid On"
+    ]
+}
