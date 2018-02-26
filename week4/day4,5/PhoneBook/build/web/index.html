@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        <title>Phone Book</title>
+        <meta charset="UTF-8">
+    </head>
+    <style>
+             .subheading {
+    color: #9E9E9E;
+    font-size: 14px;
+    float: right;
+    margin: 14px;
+}
+        .content{
+    margin-top: 170px;
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    }
+        .a{
+    font-size: 12px;
+    color: #343434 !important;
+}
+        a:link{
+            color: white;
+    text-decoration: none;
+    }
+        #Header{
+        display: flex;
+        height: 24px;
+        flex-direction: row;
+        align-items: center;
+        width: 100%;
+        margin: 0px;
+        padding: 15px;
+        background-color: mediumseagreen;
+        font-size: 17px;
+        color:white;
+        margin-top: -10px;
+    margin-left: -7px;
+    } 
+        .right{
+        right: 0;
+        top: 19px;
+        position:absolute;
+    }
+    .title{
+         font-size: 16px;
+            flex-grow: 1;
+            font-color: #9E9E9El;
+    }
+    .row{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    padding: 8px;
+    width: 283px;
+    border-radius: 2px;
+    border: .5px solid;
+    margin: 8px;
+}
+ .row1{
+     margin: 8px;
+    flex-direction: row;
+    align-items: center;
+    padding: 8px;
+    border-radius: 2px;
+    border: .5px solid;
+}
+    .editbutton{
+        background-color: #8952ec;
+    border: none;
+    color: #FFFFFF;
+    padding: 16px 40px;
+    box-shadow: 0 1px 2px rgba(0,0,0,0.4);
+    border-radius: 4px;
+    outline: none;
+    cursor: pointer;
+    font-weight: 600;
+    }
+    </style>
+    <body>
+        <div id="Header">
+            Phone Book     
+            <div class="right title">
+                <a href="AllContacts.jsp">All Contacts</a> &nbsp;
+                <a href="/self_service_portal/jsp/logout.jsp">Logout</a>
+            </div>
+        </div>
+                <div class="content">
+            <h1>Edit Details</h1>
+        
+            <form action="/PhoneBook/EditContact">
+                <table>
+                    <tr>
+                        <td class="subheading">NAME</td>
+                        <td >  <input class="row1"   name="fname" type="text" >
+                            <input class="row1"  name='lname' type="text" >
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="subheading">ADDRESS</td>
+                        <td >   <input class="row" type="text" name="addLine1" placeholder="Address line 1"> </td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td>
+                            <input class="row" type="text" name="addline2" placeholder="Address line 2">
+                        </td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td>
+                            <input  class="row1" type="text" name="city" placeholder="city">
+                            <select  class="row1" style="height: 33px;width: 142px;" name="State" placeholer="state">
+                                 <option value="Tamil Nadu">Tamil-Nadu</option>
+                            </select>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td>
+                            <input class="row1" type="text" name="zip" placeholder="zip">
+                            <select class="row1" style="height: 33px;width: 142px;" name="Country" plceholder="country">
+                                <option value="India">india</option>
+                            </select>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="subheading">
+                            Phone (Work)
+                        </td>
+                        <td>
+                            <input class="row" name="phone work" type="text"   >
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="subheading">
+                            Phone (Mobile)
+                        </td>
+                        <td>
+                            <input class="row" name="phone mobile" type="text"   >
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="subheading">
+                            phone (Home)
+                        </td>
+                        <td>
+                            <input class="row" name="phone home" type="text"   >
+                        </td>
+                    </tr>
+                </table>
+                <input  class="editbutton" style="margin-left: 140px;" type="submit" value="Add contact">
+                <a class="a" style="margin-left: 20px;" href="editDetails.jsp">Discard</a>
+            </form>
+        </div>
+    </body>
+</html>

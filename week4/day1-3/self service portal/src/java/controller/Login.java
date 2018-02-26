@@ -35,9 +35,6 @@ public class Login extends HttpServlet {
             throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8");
         try (PrintWriter out = response.getWriter()) {
-            out.println("<html>");
-            out.println("<body>");
-            String pwd="";
             email=request.getParameter("email");
             password = request.getParameter("pwd");
             /*if(email.length()==0){
@@ -53,15 +50,15 @@ public class Login extends HttpServlet {
                 PreparedStatement stmt = con.prepareStatement(query);
                 stmt.setString(1,email);
                 ResultSet table = stmt.executeQuery();
+                String pwd;
                 if(table.next()){
                     pwd = table.getString("password");
-                }/*else{
-                    //message="user doesn't exits";
+                }else{
+                    message="user doesn't exits";
                     return;
-                }*/
+                }
                 out.println(pwd);
                 out.println(request.getParameter("pwd"));
-                //out.write(message);
                 if(pwd.equals(password)){
                     out.print("password matches");
                     HttpSession session = request.getSession();
@@ -87,15 +84,13 @@ public class Login extends HttpServlet {
                     }
                     request.getRequestDispatcher("/").forward(request,response);
                     //response.sendRedirect("jsp/PortalLanding.jsp");
+                }else{
+                    message="password doesn't Match";
                 }
+                out.print(message);
             }catch(Exception e){
                 out.print(e.getMessage());
-            }
-            /* TODO output your page here. You may use following sample code. */
-            
-            out.println("<h1>Servlet login failed at " + request.getContextPath() + "</h1>");
-            out.println("</body>");
-            out.println("</html>");
+            } 
         }
     }
 

@@ -13,7 +13,7 @@
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <title>Service Portal</title>
-        <link rel="stylesheet" type="text/css" href="styleSheet.css">
+        <link rel="stylesheet" type="text/css" href="styles.css">
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     </head>
     <body>
